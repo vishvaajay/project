@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>HTML Console</title>
+</head>
+<body>
+   <h3> Output Console </h3>
+   <p> Output: </p>
+   <div id="output"></div>
+   <div id="opError" style="color : #ff0000"></div>
+   <script>
+      var content = ''
+      var error = ''
+      var opDiv = document.querySelector('#output')
+      var opErrDiv = document.querySelector('#opError')
+
+      // actual javascript code
+      try {
+         let s = 'HELLO World JavaScript is Awesome'
+         s = s.toLowerCase()
+         s = s.replace(/ /g, '|')    // globally replace all spaces with |
+         s = s.trim()
+         content += "Value of s: " + JSON.stringify(s) + '<br>'
+      }
+      catch (err) {
+         error += err
+      }
+      finally {
+
+         // display on output console
+         opDiv.innerHTML = content
+         opErrDiv.innerHTML = error
+      }
+   </script>
+</body>
+</html>
